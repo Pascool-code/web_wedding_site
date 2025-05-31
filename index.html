@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hélène & Pascal - Notre Mariage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#histoire">Notre Histoire</a></li>
+            <li><a href="#details">Détails</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="hebergements.html">Hébergements</a></li>
+        </ul>
+    </nav>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Hélène & Pascal</h1>
+            <p class="date">06 Juin 2026</p>
+        </div>
+    </section>
+
+    <section id="histoire" class="story">
+        <h2>Notre Histoire</h2>
+        <div class="story-content">
+            <p>C'est ici que continue notre belle histoire d'amour...</p>
+        </div>
+    </section>
+
+    <section id="details" class="details">
+        <h2>Les Détails</h2>
+        <div class="details-grid">
+            <div class="detail-card">
+                <h3>La Cérémonie</h3>
+                <p>14h00</p>
+                <p>Domaine des Saules</p>
+            </div>
+            <div class="detail-card">
+                <h3>La Réception</h3>
+                <p>16h00</p>
+                <p>Domaine des Saules</p>
+            </div>
+            <div class="detail-card">
+                <h3>Le Dîner</h3>
+                <p>19h00</p>
+                <p>Domaine des Saules</p>
+            </div>
+        </div>
+        <div class="map-container">
+            <div id="map"></div>
+            <p class="map-address">Domaine des Saules, Pomesson, 02540 Vendières</p>
+        </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+        <h2>RSVP</h2>
+        <form id="rsvpForm">
+            <div class="form-group">
+                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder="Votre email">
+            </div>
+            <div class="form-group">
+                <select id="presence" name="presence" required>
+                    <option value="">Serez-vous présent ?</option>
+                    <option value="oui">Oui, avec plaisir !</option>
+                    <option value="non">Non, désolé(e)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="number" id="nombreInvites" name="nombreInvites" min="0" max="4" placeholder="Nombre d'accompagnants">
+            </div>
+            <div class="form-group">
+                <input type="number" id="nombreVegetariens" name="nombreVegetariens" min="0" max="5" placeholder="Nombre de repas végétariens">
+                <small class="form-help">Merci d'indiquer le nombre total de repas végétariens souhaités (vous inclus si nécessaire)</small>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Un message pour les mariés ? Précisez ici toute allergie ou régime alimentaire particulier"></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hélène & Pascal</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html> 
