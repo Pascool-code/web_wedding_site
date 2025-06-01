@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const body = document.body;
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            body.classList.toggle('menu-open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Fermer le menu quand on clique en dehors
+        document.addEventListener('click', (e) => {
+            if (body.classList.contains('menu-open') && 
+                !e.target.closest('.nav-links') && 
+                !e.target.closest('.menu-toggle')) {
+                body.classList.remove('menu-open');
+            }
+        });
+    }
+
     // Initialisation de la carte
     const map = L.map('map').setView([48.8675991,3.4807403], 13); // Coordonnées du domaine des Saules
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -69,33 +95,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('section').forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
-    });
-
-    // Gestion du menu mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('menu-open');
-        document.body.style.overflow = nav.classList.contains('menu-open') ? 'hidden' : '';
-    });
-
-    // Fermer le menu quand on clique sur un lien
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('menu-open');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Fermer le menu si on clique en dehors
-    document.addEventListener('click', (e) => {
-        if (nav.classList.contains('menu-open') && 
-            !e.target.closest('.nav-menu') && 
-            !e.target.closest('.menu-toggle')) {
-            nav.classList.remove('menu-open');
-            document.body.style.overflow = '';
-        }
     });
 }); 
