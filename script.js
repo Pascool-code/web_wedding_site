@@ -70,4 +70,32 @@ document.addEventListener('DOMContentLoaded', function() {
         section.classList.add('fade-in');
         observer.observe(section);
     });
+
+    // Gestion du menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('menu-open');
+        document.body.style.overflow = nav.classList.contains('menu-open') ? 'hidden' : '';
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('menu-open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Fermer le menu si on clique en dehors
+    document.addEventListener('click', (e) => {
+        if (nav.classList.contains('menu-open') && 
+            !e.target.closest('.nav-menu') && 
+            !e.target.closest('.menu-toggle')) {
+            nav.classList.remove('menu-open');
+            document.body.style.overflow = '';
+        }
+    });
 }); 
