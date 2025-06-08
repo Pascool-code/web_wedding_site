@@ -26,13 +26,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initialisation de la carte
-    const map = L.map('map').setView([48.8675991,3.4807403], 13); // Coordonnées du domaine des Saules
+    const map = L.map('map', {
+        center: [48.8675991, 3.4807403],
+        zoom: 13,
+        dragging: false,        // Désactive le déplacement
+        touchZoom: false,       // Désactive le zoom sur mobile
+        scrollWheelZoom: false, // Désactive le zoom avec la molette
+        doubleClickZoom: false, // Désactive le zoom au double-clic
+        boxZoom: false,         // Désactive le zoom avec la boîte
+        keyboard: false,        // Désactive les contrôles clavier
+        zoomControl: false      // Masque les boutons de zoom
+    });
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     // Ajout du marqueur pour le lieu du mariage
-    const marker = L.marker([48.8675991,3.4807403]).addTo(map);
+    const marker = L.marker([48.8675991, 3.4807403]).addTo(map);
     marker.bindPopup("<b>Domaine des Saules</b><br>Lieu de la célébration").openPopup();
 
     // Smooth scrolling pour la navigation
@@ -96,4 +107,48 @@ document.addEventListener('DOMContentLoaded', function() {
         section.classList.add('fade-in');
         observer.observe(section);
     });
+
+    // Variables pour le diaporama
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Fonction globale pour changer les slides
+    window.changeSlide = function(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Fonction globale pour le contrôle par points
+    window.currentSlide = function(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("slides");
+        const dots = document.getElementsByClassName("dot");
+        const thumbnails = document.getElementsByClassName("thumbnail");
+        
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        
+        // Cacher toutes les slides
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        // Désactiver tous les points et miniatures
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+            thumbnails[i].classList.remove("active");
+        }
+        
+        // Afficher la slide actuelle et activer le point et la miniature correspondants
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].classList.add("active");
+        thumbnails[slideIndex-1].classList.add("active");
+    }
+
+    // Changement automatique des slides toutes les 5 secondes
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
 }); 
