@@ -124,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showSlides(n) {
         const slides = document.getElementsByClassName("slides");
-        const dots = document.getElementsByClassName("dot");
         const thumbnails = document.getElementsByClassName("thumbnail");
         
         if (n > slides.length) {slideIndex = 1}
@@ -136,14 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Désactiver tous les points et miniatures
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].classList.remove("active");
+        for (let i = 0; i < thumbnails.length; i++) {
             thumbnails[i].classList.remove("active");
         }
         
         // Afficher la slide actuelle et activer le point et la miniature correspondants
         slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].classList.add("active");
         thumbnails[slideIndex-1].classList.add("active");
     }
 
