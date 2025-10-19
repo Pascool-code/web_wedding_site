@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hélène & Pascal - Notre Mariage</title>
+    <title>Hélène & Pascal - Our Wedding</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -15,54 +15,54 @@
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#histoire">Notre Histoire</a></li>
-                <li><a href="#details">Détails</a></li>
+                <li><a href="#accueil">Home</a></li>
+                <li><a href="#histoire">Our Story</a></li>
+                <li><a href="#details">Details</a></li>
                 <li><a href="#rsvp">RSVP</a></li>
-                <li><a href="hebergements.html">Hébergements</a></li>
+                <li><a href="hebergements_en.html">Accommodations</a></li>
             </ul>
-        </div>
-        <div class="language-toggle-container">
-            <a href="index_en.html" class="language-toggle" aria-label="Switch to English version" title="Switch to English version">🇬🇧 EN</a>
         </div>
     </nav>
 
     <section id="accueil" class="hero">
+        <div class="language-toggle-container">
+            <a href="index.html" class="language-toggle" aria-label="Passer à la version française" title="Passer à la version française">🇫🇷 FR</a>
+        </div>
         <div class="hero-content">
-            <h1>Mariage</h1>
+            <h1>Wedding</h1>
             <h1>Hélène & Pascal</h1>
-            <p class="date">06 Juin 2026</p>
+            <p class="date">June 6th, 2026</p>
         </div>
     </section>
 
     <section id="histoire" class="story">
-        <h2>Notre Histoire</h2>
+        <h2>Our Story</h2>
         <div class="story-content">
-            <p>Depuis notre rencontre en 2019, nous avons partagé de nombreux moments de bonheur et d'aventures. Nous avons décidé de nous unir pour la vie et souhaitons célébrer cet évènement avec vous.</p>
+            <p>Since we met in 2019, we have shared many moments of happiness and adventures. We have decided to unite for life and wish to celebrate this event with you.</p>
             
             <div class="slideshow-container">
                 <div class="slides fade">
-                    <img src="images/photo1.jpg" alt="Notre première rencontre">
+                    <img src="images/photo1.jpg" alt="Our first meeting">
                 </div>
 
                 <div class="slides fade">
-                    <img src="images/photo2.jpg" alt="Nos vacances ensemble">
+                    <img src="images/photo2.jpg" alt="Our holidays together">
                 </div>
 
                 <div class="slides fade">
-                    <img src="images/photo4.jpg" alt="La demande en mariage">
+                    <img src="images/photo4.jpg" alt="The marriage proposal">
                 </div>
 
                 <div class="slides fade">
-                    <img src="images/photo5.jpg" alt="Nos moments de bonheur">
+                    <img src="images/photo5.jpg" alt="Our happy moments">
                 </div>
 
                 <div class="slides fade">
-                    <img src="images/photo6.jpg" alt="Notre engagement">
+                    <img src="images/photo6.jpg" alt="Our engagement">
                 </div>
                 
                 <div class="slides fade">
-                    <img src="images/photo7.jpg" alt="Notre engagement">
+                    <img src="images/photo7.jpg" alt="Our engagement">
                 </div>
 
                 <button class="prev" onclick="changeSlide(-1)">❮</button>
@@ -94,21 +94,21 @@
     </section>
 
     <section id="details" class="details">
-        <h2>Les Détails</h2>
+        <h2>The Details</h2>
         <div class="details-grid">
             <div class="detail-card">
-                <h3>La Cérémonie</h3>
-                <p>17h00</p>
+                <h3>The Ceremony</h3>
+                <p>5:00 PM</p>
                 <p>Domaine des Saules</p>
             </div>
             <div class="detail-card">
-                <h3>Le vin d'honneur</h3>
-                <p>18h00</p>
+                <h3>Cocktail Reception</h3>
+                <p>6:00 PM</p>
                 <p>Domaine des Saules</p>
             </div>
             <div class="detail-card">
-                <h3>Le Dîner</h3>
-                <p>20h00</p>
+                <h3>Dinner</h3>
+                <p>8:00 PM</p>
                 <p>Domaine des Saules</p>
             </div>
         </div>
@@ -117,10 +117,10 @@
             <p class="map-address">Domaine des Saules, Pomesson, 02540 Vendières</p>
             <div class="map-links">
                 <a href="https://www.google.com/maps/search/?api=1&query=Domaine+des+Saules+Pomesson+02540+Vendieres" target="_blank" class="btn-link">
-                    🚗 Ouvrir dans Google Maps
+                    🚗 Open in Google Maps
                 </a>
-                <a href="hebergements.html" class="btn-link">
-                    🏡 Voir les hébergements à proximité
+                <a href="hebergements_en.html" class="btn-link">
+                    🏡 See nearby accommodations
                 </a>
             </div>
         </div>
@@ -130,35 +130,35 @@
         <h2>RSVP</h2>
         <form id="rsvpForm">
             <div class="form-group">
-                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                <input type="text" id="nom" name="nom" required placeholder="Your name">
             </div>
             <div class="form-group">
-                <input type="email" id="email" name="email" required placeholder="Votre email">
+                <input type="email" id="email" name="email" required placeholder="Your email">
             </div>
             <div class="form-group">
-                <h4>Serez-vous présent à notre mariage ?</h4>
+                <h4>Will you be present at our wedding?</h4>
                 <select id="presence" name="presence" required>
-                    <option value="oui">Oui, avec plaisir !</option>
-                    <option value="non">Non, désolé(e)</option>
+                    <option value="oui">Yes, with pleasure!</option>
+                    <option value="non">No, sorry</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <h4>Serez-vous présent au brunch du lendemain ?</h4>
+                <h4>Will you be present at the brunch the next day?</h4>
                 <select id="brunch" name="brunch" required>
-                    <option value="oui">Oui</option>
-                    <option value="non">Non</option>
+                    <option value="oui">Yes</option>
+                    <option value="non">No</option>
                 </select>
-                <small class="form-help">Le brunch aura lieu le dimanche 7 juin de 10h à 14h</small>
+                <small class="form-help">The brunch will take place on Sunday, June 7th from 10 AM to 2 PM</small>
             </div>
             <div class="form-group">
-                <input type="number" id="nombreVegetariens" name="nombreVegetariens" min="0" max="5" placeholder="Nombre de repas végétariens">
-                <small class="form-help">Merci d'indiquer le nombre total de repas végétariens souhaités (vous inclus si nécessaire)</small>
+                <input type="number" id="nombreVegetariens" name="nombreVegetariens" min="0" max="5" placeholder="Number of vegetarian meals">
+                <small class="form-help">Please indicate the total number of vegetarian meals desired (including yourself if necessary)</small>
             </div>
             <div class="form-group">
-                <textarea id="message" name="message" placeholder="Un message pour les mariés ? Précisez ici toute allergie ou régime alimentaire particulier"></textarea>
+                <textarea id="message" name="message" placeholder="A message for the couple? Please specify any allergies or special dietary requirements here"></textarea>
             </div>
-            <button type="submit">Envoyer</button>
+            <button type="submit">Send</button>
         </form>
     </section>
 
